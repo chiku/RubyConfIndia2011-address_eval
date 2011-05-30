@@ -1,0 +1,5 @@
+This runs on ruby 1.9.2 and 1.8.7
+
+This code was presented in RubyConf India 2011 by Habibullah Pagarkar and Chirantan Mitra
+
+This code shows stepping away from eval.
