@@ -32,12 +32,9 @@ class Address
 
   Address.module_eval do
     State.constants.each do |state_var|
-      eval(<<-SRC
-        def #{state_var.downcase}?
-          state.self_and_ancestors.any? { |state| state == State::#{state_var} }
-        end
-        SRC
-      )
+      define_method "#{state_var.downcase}?" do
+        state.self_and_ancestors.any? { |state| state == eval("State::#{state_var}") }
+      end
     end
   end
 end
